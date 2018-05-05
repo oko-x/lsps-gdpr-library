@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.whitestein.lsps.modeler.rest:RestDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.whitestein.lsps.modeler.rest="http:///com/whitestein/lsps/modeler/rest.ecore" method="POST" pathTemplate="/gdpr/resource" inputType="gdpr::IncomingConsent" errorType="gdpr::RESTResponse" outputType="gdpr::Consent" generateHttpHeadersParam="true" generateHttpParamsParam="true"/>

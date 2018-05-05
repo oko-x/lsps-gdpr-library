@@ -4,4 +4,12 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:com.whitestein.lsps.modeler.document="http:///com/whitestein/lsps/modeler/document.ecore"
     xmi:id="_IuZ-8E9xEeipTuZCnZov6A"
-    newUI="true"/>
+    newUI="true">
+  <docs
+      xmi:id="_9BUBsE-cEeipTuZCnZov6A"
+      name="consentTable">
+    <title><![CDATA["Consent Table"]]></title>
+    <uIDefinition>new consentTableForm()</uIDefinition>
+    <accessRights>true</accessRights>
+  </docs>
+</com.whitestein.lsps.modeler.document:Documents>

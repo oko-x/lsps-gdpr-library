@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.gbpmn:ProcessModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.whitestein.lsps.modeler.diagram="http:///com/whitestein/lsps/modeler/diagram.ecore"
+    xmlns:com.whitestein.lsps.modeler.gbpmn="http:///com/whitestein/lsps/modeler/gbpmn.ecore"
+    xmi:id="_KfyX8FBsEeipTuZCnZov6A"
+    name="rest"
+    formatVersion="1"
+    processType="BPMN_BASED">
+  <elements
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:ExclusiveGateway"
+      xmi:id="_N6oHIFBsEeipTuZCnZov6A"
+      sourceRelationships="_N6oHPVBsEeipTuZCnZov6A _N6oHQFBsEeipTuZCnZov6A"
+      targetRelationships="_N6oHOlBsEeipTuZCnZov6A">
+    <assignments
+        xmi:id="_N6oHIVBsEeipTuZCnZov6A">
+      <expression><![CDATA[consent := proxy(Consent);
+consent.granted_at := now();
+def ApplicationUser user := proxy(ApplicationUser);
+def Application application := proxy(Application);
+def DataController controller := proxy(DataController);
+
+application.controller := controller;
+user.application := application;
+consent.user := user;
+
+mergeProxies(false, consent, user, application, controller);
+
+everythingOK:=false;]]></expression>
+    </assignments>
+    <measurements
+        xmi:id="_N6oHIlBsEeipTuZCnZov6A"/>
+  </elements>
+  <elements
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:NoneStartEvent"
+      xmi:id="_N6oHI1BsEeipTuZCnZov6A"
+      sourceRelationships="_N6oHOVBsEeipTuZCnZov6A"/>
+  <elements
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:Task"
+      xmi:id="_N6oHJFBsEeipTuZCnZov6A"
+      name="Task2"
+      sourceRelationships="_RvITgFBsEeipTuZCnZov6A"
+      targetRelationships="_N6oHPVBsEeipTuZCnZov6A"
+      type="gdpr::sendRestResponse">
+    <assignments
+        xmi:id="_N6oHJVBsEeipTuZCnZov6A"
+        qualifier="START"/>
+    <assignments
+        xmi:id="_N6oHJlBsEeipTuZCnZov6A"
+        qualifier="END"/>
+    <assignments
+        xmi:id="_N6oHJ1BsEeipTuZCnZov6A"
+        qualifier="ACCOMPLISH"/>
+    <measurements
+        xmi:id="_N6oHKFBsEeipTuZCnZov6A"
+        qualifier="START"/>
+    <measurements
+        xmi:id="_N6oHKVBsEeipTuZCnZov6A"
+        qualifier="END"/>
+    <measurements
+        xmi:id="_N6oHKlBsEeipTuZCnZov6A"
+        qualifier="ACCOMPLISH"/>
+    <parametersExpression><![CDATA[requestId /* Integer */ -> requestId
+,
+output /* gdpr::Consent */ -> new RESTResponse(data -> "ahoj")
+]]></parametersExpression>
+  </elements>
+  <elements
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:Task"
+      xmi:id="_N6oHK1BsEeipTuZCnZov6A"
+      name="Task3"
+      sourceRelationships="_R-504FBsEeipTuZCnZov6A"
+      targetRelationships="_N6oHQFBsEeipTuZCnZov6A"
+      type="gdpr::sendRestErrorResponse">
+    <assignments
+        xmi:id="_N6oHLFBsEeipTuZCnZov6A"
+        qualifier="START"/>
+    <assignments
+        xmi:id="_N6oHLVBsEeipTuZCnZov6A"
+        qualifier="END"/>
+    <assignments
+        xmi:id="_N6oHLlBsEeipTuZCnZov6A"
+        qualifier="ACCOMPLISH"/>
+    <measurements
+        xmi:id="_N6oHL1BsEeipTuZCnZov6A"
+        qualifier="START"/>
+    <measurements
+        xmi:id="_N6oHMFBsEeipTuZCnZov6A"
+        qualifier="END"/>
+    <measurements
+        xmi:id="_N6oHMVBsEeipTuZCnZov6A"
+        qualifier="ACCOMPLISH"/>
+    <parametersExpression><![CDATA[requestId /* Integer */ -> requestId
+,
+error /* gdpr::RESTError */ -> new RESTResponse(data -> "error")
+]]></parametersExpression>
+  </elements>
+  <elements
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:Task"
+      xmi:id="_N6oHMlBsEeipTuZCnZov6A"
+      name="Task1"
+      sourceRelationships="_N6oHOlBsEeipTuZCnZov6A"
+      targetRelationships="_N6oHOVBsEeipTuZCnZov6A"
+      type="gdpr::waitRestRequest">
+    <assignments
+        xmi:id="_N6oHM1BsEeipTuZCnZov6A"
+        qualifier="START"/>
+    <assignments
+        xmi:id="_N6oHNFBsEeipTuZCnZov6A"
+        qualifier="END"/>
+    <assignments
+        xmi:id="_N6oHNVBsEeipTuZCnZov6A"
+        qualifier="ACCOMPLISH"/>
+    <measurements
+        xmi:id="_N6oHNlBsEeipTuZCnZov6A"
+        qualifier="START"/>
+    <measurements
+        xmi:id="_N6oHN1BsEeipTuZCnZov6A"
+        qualifier="END"/>
+    <measurements
+        xmi:id="_N6oHOFBsEeipTuZCnZov6A"
+        qualifier="ACCOMPLISH"/>
+    <parametersExpression><![CDATA[requestId /* Reference<Integer> */ -> &requestId
+,
+input /* Reference<gdpr::IncomingConsent> */ -> &incomingData
+,
+httpHeaders /* Reference<Map<String, String>> */ -> null
+,
+requestParams /* Reference<Map<String, String>> */ -> null
+]]></parametersExpression>
+  </elements>
+  <elements
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:SimpleEndEvent"
+      xmi:id="_RXgdsFBsEeipTuZCnZov6A"
+      targetRelationships="_RvITgFBsEeipTuZCnZov6A _R-504FBsEeipTuZCnZov6A"/>
+  <diagrams
+      xmi:id="_KfyX8VBsEeipTuZCnZov6A"
+      name="Main">
+    <children
+        xmi:id="_N6oHQ1BsEeipTuZCnZov6A"
+        element="_N6oHJFBsEeipTuZCnZov6A"
+        sourceEdges="_RvITgVBsEeipTuZCnZov6A"
+        targetEdges="_N6qjZ1BsEeipTuZCnZov6A">
+      <layoutConstraint
+          xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
+          xmi:id="_N6oHRFBsEeipTuZCnZov6A"
+          x="38"
+          y="400"
+          width="-1"
+          height="-1"/>
+    </children>
+    <children
+        xmi:id="_N6oHRVBsEeipTuZCnZov6A"
+        element="_N6oHI1BsEeipTuZCnZov6A"
+        sourceEdges="_N6qjYFBsEeipTuZCnZov6A">
+      <layoutConstraint
+          xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
+          xmi:id="_N6oHRlBsEeipTuZCnZov6A"
+          x="268"
+          y="23"
+          width="-1"
+          height="-1"/>
+    </children>
+    <children
+        xmi:id="_N6oHR1BsEeipTuZCnZov6A"
+        element="_N6oHK1BsEeipTuZCnZov6A"
+        sourceEdges="_R-504VBsEeipTuZCnZov6A"
+        targetEdges="_N6qjYlBsEeipTuZCnZov6A">
+      <layoutConstraint
+          xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
+          xmi:id="_N6oHSFBsEeipTuZCnZov6A"
+          x="258"
+          y="400"
+          width="-1"
+          height="-1"/>
+    </children>
+    <children
+        xmi:id="_N6oHSVBsEeipTuZCnZov6A"
+        element="_N6oHMlBsEeipTuZCnZov6A"
+        sourceEdges="_N6qjZVBsEeipTuZCnZov6A"
+        targetEdges="_N6qjYFBsEeipTuZCnZov6A">
+      <layoutConstraint
+          xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
+          xmi:id="_N6oHSlBsEeipTuZCnZov6A"
+          x="154"
+          y="111"
+          width="-1"
+          height="-1"/>
+    </children>
+    <children
+        xmi:id="_N6oHS1BsEeipTuZCnZov6A"
+        element="_N6oHIFBsEeipTuZCnZov6A"
+        sourceEdges="_N6qjZ1BsEeipTuZCnZov6A _N6qjYlBsEeipTuZCnZov6A"
+        targetEdges="_N6qjZVBsEeipTuZCnZov6A">
+      <layoutConstraint
+          xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
+          xmi:id="_N6oHTFBsEeipTuZCnZov6A"
+          x="209"
+          y="275"
+          width="-1"
+          height="-1"/>
+    </children>
+    <children
+        xmi:id="_RXgdsVBsEeipTuZCnZov6A"
+        element="_RXgdsFBsEeipTuZCnZov6A"
+        targetEdges="_RvITgVBsEeipTuZCnZov6A _R-504VBsEeipTuZCnZov6A">
+      <layoutConstraint
+          xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
+          xmi:id="_RXgdslBsEeipTuZCnZov6A"
+          x="220"
+          y="566"
+          width="-1"
+          height="-1"/>
+    </children>
+    <connections
+        xmi:id="_N6qjYFBsEeipTuZCnZov6A"
+        element="_N6oHOVBsEeipTuZCnZov6A"
+        source="_N6oHRVBsEeipTuZCnZov6A"
+        target="_N6oHSVBsEeipTuZCnZov6A">
+      <children
+          xmi:id="_N6qjYVBsEeipTuZCnZov6A"/>
+    </connections>
+    <connections
+        xmi:id="_N6qjYlBsEeipTuZCnZov6A"
+        element="_N6oHQFBsEeipTuZCnZov6A"
+        source="_N6oHS1BsEeipTuZCnZov6A"
+        target="_N6oHR1BsEeipTuZCnZov6A">
+      <children
+          xmi:id="_N6qjY1BsEeipTuZCnZov6A">
+        <layoutConstraint
+            xsi:type="com.whitestein.lsps.modeler.diagram:ConnectionLabelLocation"
+            xmi:id="_N6qjZFBsEeipTuZCnZov6A"
+            sourceDimX="33"
+            sourceDimY="21"
+            targetDimX="-25"
+            targetDimY="-55"/>
+      </children>
+    </connections>
+    <connections
+        xmi:id="_N6qjZVBsEeipTuZCnZov6A"
+        element="_N6oHOlBsEeipTuZCnZov6A"
+        source="_N6oHSVBsEeipTuZCnZov6A"
+        target="_N6oHS1BsEeipTuZCnZov6A">
+      <children
+          xmi:id="_N6qjZlBsEeipTuZCnZov6A"/>
+    </connections>
+    <connections
+        xmi:id="_N6qjZ1BsEeipTuZCnZov6A"
+        element="_N6oHPVBsEeipTuZCnZov6A"
+        source="_N6oHS1BsEeipTuZCnZov6A"
+        target="_N6oHQ1BsEeipTuZCnZov6A">
+      <children
+          xmi:id="_N6qjaFBsEeipTuZCnZov6A">
+        <layoutConstraint
+            xsi:type="com.whitestein.lsps.modeler.diagram:ConnectionLabelLocation"
+            xmi:id="_N6qjaVBsEeipTuZCnZov6A"
+            sourceDimX="-160"
+            sourceDimY="22"
+            targetDimX="-104"
+            targetDimY="-53"/>
+      </children>
+    </connections>
+    <connections
+        xmi:id="_RvITgVBsEeipTuZCnZov6A"
+        element="_RvITgFBsEeipTuZCnZov6A"
+        source="_N6oHQ1BsEeipTuZCnZov6A"
+        target="_RXgdsVBsEeipTuZCnZov6A">
+      <children
+          xmi:id="_RvITglBsEeipTuZCnZov6A"/>
+    </connections>
+    <connections
+        xmi:id="_R-504VBsEeipTuZCnZov6A"
+        element="_R-504FBsEeipTuZCnZov6A"
+        source="_N6oHR1BsEeipTuZCnZov6A"
+        target="_RXgdsVBsEeipTuZCnZov6A">
+      <children
+          xmi:id="_R-504lBsEeipTuZCnZov6A"/>
+    </connections>
+  </diagrams>
+  <variables
+      xmi:id="_TFpagFBsEeipTuZCnZov6A"
+      name="everythingOK"
+      variableType="Boolean"/>
+  <variables
+      xmi:id="_VgDAYFBsEeipTuZCnZov6A"
+      name="incomingData"
+      variableType="IncomingConsent"/>
+  <variables
+      xmi:id="_YnG38FBsEeipTuZCnZov6A"
+      name="requestId"
+      variableType="Integer"/>
+  <variables
+      xmi:id="_WNS2AFBuEeipTuZCnZov6A"
+      name="consent"
+      variableType="Consent"/>
+  <relationships
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:PlanRelationship"
+      xmi:id="_N6oHOVBsEeipTuZCnZov6A"
+      source="_N6oHI1BsEeipTuZCnZov6A"
+      target="_N6oHMlBsEeipTuZCnZov6A"/>
+  <relationships
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:PlanRelationship"
+      xmi:id="_N6oHOlBsEeipTuZCnZov6A"
+      source="_N6oHMlBsEeipTuZCnZov6A"
+      target="_N6oHIFBsEeipTuZCnZov6A">
+    <assignments
+        xmi:id="_N6oHO1BsEeipTuZCnZov6A"/>
+    <measurements
+        xmi:id="_N6oHPFBsEeipTuZCnZov6A"/>
+  </relationships>
+  <relationships
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:PlanRelationship"
+      xmi:id="_N6oHPVBsEeipTuZCnZov6A"
+      source="_N6oHIFBsEeipTuZCnZov6A"
+      target="_N6oHJFBsEeipTuZCnZov6A">
+    <assignments
+        xmi:id="_N6oHPlBsEeipTuZCnZov6A"/>
+    <measurements
+        xmi:id="_N6oHP1BsEeipTuZCnZov6A"/>
+    <guard>everythingOK==true</guard>
+  </relationships>
+  <relationships
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:PlanRelationship"
+      xmi:id="_N6oHQFBsEeipTuZCnZov6A"
+      source="_N6oHIFBsEeipTuZCnZov6A"
+      target="_N6oHK1BsEeipTuZCnZov6A">
+    <assignments
+        xmi:id="_N6oHQVBsEeipTuZCnZov6A"/>
+    <measurements
+        xmi:id="_N6oHQlBsEeipTuZCnZov6A"/>
+    <guard>everythingOK!=true</guard>
+  </relationships>
+  <relationships
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:PlanRelationship"
+      xmi:id="_RvITgFBsEeipTuZCnZov6A"
+      source="_N6oHJFBsEeipTuZCnZov6A"
+      target="_RXgdsFBsEeipTuZCnZov6A"/>
+  <relationships
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:PlanRelationship"
+      xmi:id="_R-504FBsEeipTuZCnZov6A"
+      source="_N6oHK1BsEeipTuZCnZov6A"
+      target="_RXgdsFBsEeipTuZCnZov6A"/>
+  <assignments
+      xmi:id="_VJycg1BsEeipTuZCnZov6A"
+      qualifier="START"/>
+  <assignments
+      xmi:id="_VJychFBsEeipTuZCnZov6A"
+      qualifier="END"/>
+  <assignments
+      xmi:id="_VJychVBsEeipTuZCnZov6A"
+      qualifier="ACCOMPLISH"/>
+  <measurements
+      xmi:id="_VJycgFBsEeipTuZCnZov6A"
+      qualifier="START"/>
+  <measurements
+      xmi:id="_VJycgVBsEeipTuZCnZov6A"
+      qualifier="END"/>
+  <measurements
+      xmi:id="_VJycglBsEeipTuZCnZov6A"
+      qualifier="ACCOMPLISH"/>
+</com.whitestein.lsps.modeler.gbpmn:ProcessModel>

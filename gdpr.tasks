@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.tasklib:TaskLibrary
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:com.whitestein.lsps.modeler.tasklib="http:///com/whitestein/lsps/modeler/tasklib.ecore"
+    xmi:id="_xyWckFBlEeipTuZCnZov6A">
+  <taskTypes
+      xmi:id="_xyWckVBlEeipTuZCnZov6A"
+      name="waitRestRequest"
+      classname="com.whitestein.lsps.wsserver.task.RestRequestWaitpointTask">
+    <metadata
+        xmi:id="_xyWcklBlEeipTuZCnZov6A"
+        name="method"
+        value="POST"/>
+    <metadata
+        xmi:id="_xyWck1BlEeipTuZCnZov6A"
+        name="pathTemplate"
+        value="/gdpr/resource"/>
+    <signature
+        xmi:id="_xyWclFBlEeipTuZCnZov6A"
+        name="requestId"
+        parameterType="Reference&lt;Integer>"
+        required="true">
+      <description>Request Id, which can be use for a rest service response.</description>
+    </signature>
+    <signature
+        xmi:id="_xyWclVBlEeipTuZCnZov6A"
+        name="input"
+        parameterType="Reference&lt;gdpr::IncomingConsent>">
+      <description>The input of the rest service call.</description>
+    </signature>
+    <signature
+        xmi:id="_xyWcllBlEeipTuZCnZov6A"
+        name="httpHeaders"
+        parameterType="Reference&lt;Map&lt;String, String>>">
+      <description>Reference to variable into which request http headers should be stored. If null, headers are discarded.</description>
+    </signature>
+    <signature
+        xmi:id="_xyWcl1BlEeipTuZCnZov6A"
+        name="requestParams"
+        parameterType="Reference&lt;Map&lt;String, String>>">
+      <description>The reference to variable into which request parameters should be stored. If null, the parameters are discarded.</description>
+    </signature>
+    <description>This task waits for a rest service request. A rest service request is processed by this task if the request path matches the path template of this task. If there are serveral tasks waiting for a rest request then the task with a more precise path template is chosen to handle the request. If path templates are equal then the task registered earlier is chosen.</description>
+  </taskTypes>
+  <taskTypes
+      xmi:id="_xyWcmFBlEeipTuZCnZov6A"
+      name="sendRestResponse"
+      classname="com.whitestein.lsps.wsserver.task.RestResponseTask">
+    <signature
+        xmi:id="_xyWcmVBlEeipTuZCnZov6A"
+        name="requestId"
+        parameterType="Integer"
+        required="true">
+      <description>Request Id, which is used to connect rest service request with given response.</description>
+    </signature>
+    <signature
+        xmi:id="_xyWcmlBlEeipTuZCnZov6A"
+        name="output"
+        parameterType="gdpr::RESTResponse">
+      <description>The output of the rest service call.</description>
+    </signature>
+    <description>This task sends response to an earlier rest service request. The request to which the response is sent is determined by the parameter requestId.</description>
+  </taskTypes>
+  <taskTypes
+      xmi:id="_xyWcm1BlEeipTuZCnZov6A"
+      name="sendRestErrorResponse"
+      classname="com.whitestein.lsps.wsserver.task.RestResponseTask">
+    <signature
+        xmi:id="_xyWcnFBlEeipTuZCnZov6A"
+        name="requestId"
+        parameterType="Integer">
+      <description>Request Id, which is used to connect a rest service request with a given response.</description>
+    </signature>
+    <signature
+        xmi:id="_xyWcnVBlEeipTuZCnZov6A"
+        name="error"
+        parameterType="gdpr::RESTResponse">
+      <description>The error output of the rest service call.</description>
+    </signature>
+    <description>This task sends an error response to an earlier rest service request. The request to which the response is sent is determined by the parameter requestId.</description>
+  </taskTypes>
+</com.whitestein.lsps.modeler.tasklib:TaskLibrary>

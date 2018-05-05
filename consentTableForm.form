@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.form2:Form
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.whitestein.lsps.modeler.form2="http:///com/whitestein/lsps/modeler/form2.ecore"
+    xmi:id="_3OVWcE-cEeipTuZCnZov6A"
+    name="consentTableForm">
+  <root
+      xsi:type="com.whitestein.lsps.modeler.form2:FLayout"
+      xmi:id="_3vMn0E-cEeipTuZCnZov6A">
+    <components
+        xsi:type="com.whitestein.lsps.modeler.form2:FGrid"
+        xmi:id="_5CHoQE-cEeipTuZCnZov6A"
+        componentID="CONSENT_TABLE">
+      <dataSource
+          xmi:id="_5CHoQU-cEeipTuZCnZov6A">
+        <expression>Consent</expression>
+      </dataSource>
+      <columns
+          xmi:id="_osQ-sE-dEeipTuZCnZov6A">
+        <valueProvider
+            xmi:id="_osQ-sU-dEeipTuZCnZov6A">
+          <expression>Consent.granted_at</expression>
+        </valueProvider>
+        <renderer
+            xmi:id="_osQ-sk-dEeipTuZCnZov6A"/>
+      </columns>
+    </components>
+    <components
+        xsi:type="com.whitestein.lsps.modeler.form2:FButton"
+        xmi:id="_um6_QE-dEeipTuZCnZov6A">
+      <caption><![CDATA["add consent"]]></caption>
+      <clickListener><![CDATA[{ e ->
+	def Consent consent := proxy(Consent);
+	consent.granted_at := now();
+	mergeProxies(false, consent);
+	CONSENT_TABLE.refresh();
+}]]></clickListener>
+    </components>
+  </root>
+</com.whitestein.lsps.modeler.form2:Form>
