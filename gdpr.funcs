@@ -1,0 +1,10 @@
+@SideEffect
+public GDPRUser getOrCreateCurrentGDPRUser() {
+	def GDPRUser gdprUser := getGDPRUser(getCurrentPerson().id);
+	if gdprUser == null then
+		gdprUser := proxy(GDPRUser);
+		gdprUser.person := getCurrentPerson();
+		mergeProxies(false, gdprUser);
+	end;
+	gdprUser
+}

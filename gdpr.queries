@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.datatypes:Queries
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.whitestein.lsps.modeler.datatypes="http:///com/whitestein/lsps/modeler/datatypes.ecore"
+    xmi:id="_5aMWkFH4EeipTuZCnZov6A">
+  <queries
+      xsi:type="com.whitestein.lsps.modeler.datatypes:QueryDefinition"
+      xmi:id="_5piaIFH4EeipTuZCnZov6A"
+      name="getGDPRUser"
+      returnType="gdpr::GDPRUser"
+      singleValue="true"
+      iterator="user"
+      countQueryName="getGDPRUser_count">
+    <parameters
+        xmi:id="_AxBaMFH5EeipTuZCnZov6A"
+        name="personId"
+        parameterType="String"/>
+    <condition>user.person.id == personId</condition>
+  </queries>
+</com.whitestein.lsps.modeler.datatypes:Queries>

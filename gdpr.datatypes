@@ -19,8 +19,8 @@
       <layoutConstraint
           xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
           xmi:id="_xlOAYU9xEeipTuZCnZov6A"
-          x="385"
-          y="49"
+          x="302"
+          y="54"
           width="167"
           height="160"/>
     </children>
@@ -33,7 +33,7 @@
       <layoutConstraint
           xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
           xmi:id="_MCxdQ09yEeipTuZCnZov6A"
-          x="49"
+          x="52"
           y="257"
           width="-1"
           height="-1"/>
@@ -46,8 +46,8 @@
       <layoutConstraint
           xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
           xmi:id="_hjZtI09yEeipTuZCnZov6A"
-          x="518"
-          y="403"
+          x="505"
+          y="428"
           width="-1"
           height="-1"/>
     </children>
@@ -60,7 +60,7 @@
       <layoutConstraint
           xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
           xmi:id="_dD0uA09zEeipTuZCnZov6A"
-          x="355"
+          x="468"
           y="257"
           width="-1"
           height="-1"/>
@@ -74,8 +74,8 @@
       <layoutConstraint
           xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
           xmi:id="_Hw5lI0-CEeipTuZCnZov6A"
-          x="188"
-          y="412"
+          x="106"
+          y="454"
           width="-1"
           height="-1"/>
     </children>
@@ -83,12 +83,13 @@
         xmi:id="_bK2sUk-WEeipTuZCnZov6A"
         element="_bK2sUE-WEeipTuZCnZov6A"
         sourceEdges="_i2UjME-WEeipTuZCnZov6A _UeBWAE-YEeipTuZCnZov6A"
+        targetEdges="_UOU94FHtEeipTuZCnZov6A"
         notation="Decoration">
       <layoutConstraint
           xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
           xmi:id="_bK2sU0-WEeipTuZCnZov6A"
           x="518"
-          y="553"
+          y="595"
           width="-1"
           height="-1"/>
     </children>
@@ -99,8 +100,8 @@
       <layoutConstraint
           xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
           xmi:id="_4CzvEk-WEeipTuZCnZov6A"
-          x="37"
-          y="58"
+          x="49"
+          y="54"
           width="-1"
           height="-1"/>
     </children>
@@ -113,8 +114,8 @@
       <layoutConstraint
           xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
           xmi:id="_NBItsU-YEeipTuZCnZov6A"
-          x="183"
-          y="544"
+          x="91"
+          y="578"
           width="-1"
           height="-1"/>
     </children>
@@ -154,6 +155,46 @@
           width="-1"
           height="-1"/>
     </children>
+    <children
+        xmi:id="_Sp9BEVHtEeipTuZCnZov6A"
+        element="_Sp9BEFHtEeipTuZCnZov6A"
+        targetEdges="_pz13UFH5EeipTuZCnZov6A"
+        notation="Decoration">
+      <hiddenCompartments>DATA_TYPE_FIELDS</hiddenCompartments>
+      <hiddenCompartments>DATA_TYPE_INHERITED_FIELDS</hiddenCompartments>
+      <layoutConstraint
+          xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
+          xmi:id="_Sp9BElHtEeipTuZCnZov6A"
+          x="518"
+          y="850"
+          width="-1"
+          height="-1"/>
+    </children>
+    <children
+        xmi:id="_fhZ-MlH5EeipTuZCnZov6A"
+        element="_fhZ-MFH5EeipTuZCnZov6A"
+        sourceEdges="_pz13UFH5EeipTuZCnZov6A _UOU94FHtEeipTuZCnZov6A"
+        notation="Decoration">
+      <layoutConstraint
+          xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
+          xmi:id="_fhZ-M1H5EeipTuZCnZov6A"
+          x="518"
+          y="735"
+          width="-1"
+          height="-1"/>
+    </children>
+    <children
+        xmi:id="_UsG5gVICEeipTuZCnZov6A"
+        element="_UsG5gFICEeipTuZCnZov6A"
+        notation="Decoration">
+      <layoutConstraint
+          xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
+          xmi:id="_UsG5glICEeipTuZCnZov6A"
+          x="518"
+          y="54"
+          width="-1"
+          height="-1"/>
+    </children>
     <connections
         xmi:id="_Pk9xoE9yEeipTuZCnZov6A"
         element="_Pk9xpE9yEeipTuZCnZov6A"
@@ -163,7 +204,15 @@
           xmi:id="_Pk9xoU9yEeipTuZCnZov6A"/>
       <children
           xmi:id="_Pk9xok9yEeipTuZCnZov6A"
-          element="_Pk9xpU9yEeipTuZCnZov6A"/>
+          element="_Pk9xpU9yEeipTuZCnZov6A">
+        <layoutConstraint
+            xsi:type="com.whitestein.lsps.modeler.diagram:ConnectionLabelLocation"
+            xmi:id="_2k8mwFIDEeipTuZCnZov6A"
+            sourceDimX="-13"
+            sourceDimY="19"
+            targetDimX="50"
+            targetDimY="-34"/>
+      </children>
       <children
           xmi:id="_Pk9xo09yEeipTuZCnZov6A"
           element="_Pk9xp09yEeipTuZCnZov6A">
@@ -349,7 +398,15 @@
           xmi:id="_X8ExQU-YEeipTuZCnZov6A"/>
       <children
           xmi:id="_X8ExQk-YEeipTuZCnZov6A"
-          element="_X8ExRU-YEeipTuZCnZov6A"/>
+          element="_X8ExRU-YEeipTuZCnZov6A">
+        <layoutConstraint
+            xsi:type="com.whitestein.lsps.modeler.diagram:ConnectionLabelLocation"
+            xmi:id="_bvQZ4FIHEeipTuZCnZov6A"
+            sourceDimX="7"
+            sourceDimY="-19"
+            targetDimX="7"
+            targetDimY="48"/>
+      </children>
       <children
           xmi:id="_X8ExQ0-YEeipTuZCnZov6A"
           element="_X8ExR0-YEeipTuZCnZov6A">
@@ -360,6 +417,58 @@
             sourceDimY="-46"
             targetDimX="11"
             targetDimY="13"/>
+      </children>
+    </connections>
+    <connections
+        xmi:id="_UOU94FHtEeipTuZCnZov6A"
+        element="_UOU95FHtEeipTuZCnZov6A"
+        source="_fhZ-MlH5EeipTuZCnZov6A"
+        target="_bK2sUk-WEeipTuZCnZov6A">
+      <children
+          xmi:id="_UOU94VHtEeipTuZCnZov6A"/>
+      <children
+          xmi:id="_UOU94lHtEeipTuZCnZov6A"
+          element="_UOU95VHtEeipTuZCnZov6A">
+        <layoutConstraint
+            xsi:type="com.whitestein.lsps.modeler.diagram:ConnectionLabelLocation"
+            xmi:id="_jpMMkFHxEeipTuZCnZov6A"
+            sourceDimX="7"
+            sourceDimY="-20"
+            targetDimX="7"
+            targetDimY="40"/>
+      </children>
+      <children
+          xmi:id="_UOU941HtEeipTuZCnZov6A"
+          element="_UOU951HtEeipTuZCnZov6A">
+        <layoutConstraint
+            xsi:type="com.whitestein.lsps.modeler.diagram:ConnectionLabelLocation"
+            xmi:id="_e9IikFHwEeipTuZCnZov6A"
+            sourceDimX="11"
+            sourceDimY="-54"
+            targetDimX="11"
+            targetDimY="6"/>
+      </children>
+    </connections>
+    <connections
+        xmi:id="_pz13UFH5EeipTuZCnZov6A"
+        element="_pz13VFH5EeipTuZCnZov6A"
+        source="_fhZ-MlH5EeipTuZCnZov6A"
+        target="_Sp9BEVHtEeipTuZCnZov6A">
+      <children
+          xmi:id="_pz13UVH5EeipTuZCnZov6A"/>
+      <children
+          xmi:id="_pz13UlH5EeipTuZCnZov6A"
+          element="_pz13VVH5EeipTuZCnZov6A"/>
+      <children
+          xmi:id="_pz13U1H5EeipTuZCnZov6A"
+          element="_pz13VlH5EeipTuZCnZov6A">
+        <layoutConstraint
+            xsi:type="com.whitestein.lsps.modeler.diagram:ConnectionLabelLocation"
+            xmi:id="_rkEe0FH5EeipTuZCnZov6A"
+            sourceDimX="5"
+            sourceDimY="34"
+            targetDimX="5"
+            targetDimY="-16"/>
       </children>
     </connections>
   </diagrams>
@@ -378,7 +487,7 @@
         xmlOptional="true"/>
     <fields
         xmi:id="_4YMJAE9xEeipTuZCnZov6A"
-        name="granted_at"
+        name="grantedAt"
         parameterType="Date"
         autogenerated="false"
         xmlOptional="true"/>
@@ -388,6 +497,13 @@
       <columns
           xmi:id="_lC6rsU-YEeipTuZCnZov6A"
           name="APPLICATION_USER_ID"/>
+    </indexes>
+    <indexes
+        xmi:id="_LEIdMFIDEeipTuZCnZov6A"
+        name="CONSENT_2">
+      <columns
+          xmi:id="_LEIdMVIDEeipTuZCnZov6A"
+          name="CONSENT_PURPOSE_ID"/>
     </indexes>
   </types>
   <types
@@ -412,8 +528,21 @@
         xmlOptional="true"/>
     <fields
         xmi:id="_Lv0jsE-AEeipTuZCnZov6A"
-        name="legitimate_basis"
+        name="legitimateBasis"
         parameterType="LegitimateBasis"
+        autogenerated="false"
+        xmlOptional="true"/>
+    <fields
+        xmi:id="_faeEMFIDEeipTuZCnZov6A"
+        name="personalData"
+        parameterType="PersonalData"
+        blobLength="1000"
+        autogenerated="false"
+        xmlOptional="true"/>
+    <fields
+        xmi:id="_PTDbEFILEeipTuZCnZov6A"
+        name="purpose"
+        parameterType="String"
         autogenerated="false"
         xmlOptional="true"/>
   </types>
@@ -433,6 +562,18 @@
     <fields
         xmi:id="_pX04cE-CEeipTuZCnZov6A"
         name="name"
+        parameterType="String"
+        autogenerated="false"
+        xmlOptional="true"/>
+    <fields
+        xmi:id="_L-pyQFHjEeipTuZCnZov6A"
+        name="appId"
+        parameterType="String"
+        autogenerated="false"
+        xmlOptional="true"/>
+    <fields
+        xmi:id="_NQ3oEFHjEeipTuZCnZov6A"
+        name="appSecret"
         parameterType="String"
         autogenerated="false"
         xmlOptional="true"/>
@@ -460,7 +601,7 @@
         xmlOptional="true"/>
     <fields
         xmi:id="_eAWAoE9zEeipTuZCnZov6A"
-        name="application_identification"
+        name="applicationIdentification"
         parameterType="String"
         autogenerated="false"
         xmlOptional="true"/>
@@ -499,6 +640,7 @@
       xmi:id="_bK2sUE-WEeipTuZCnZov6A"
       name="DataController"
       sourceRelationships="_i2UjNE-WEeipTuZCnZov6A _UeBWBE-YEeipTuZCnZov6A"
+      targetRelationships="_UOU95FHtEeipTuZCnZov6A"
       shared="true">
     <fields
         xmi:id="_bK2sUU-WEeipTuZCnZov6A"
@@ -534,6 +676,12 @@
         xmi:id="_OXfcoE-YEeipTuZCnZov6A"
         name="name"
         parameterType="String"
+        autogenerated="false"
+        xmlOptional="true"/>
+    <fields
+        xmi:id="_MHskQFIJEeipTuZCnZov6A"
+        name="companyId"
+        parameterType="Integer"
         autogenerated="false"
         xmlOptional="true"/>
   </types>
@@ -573,6 +721,31 @@
         autogenerated="false"
         xmlOptional="true"/>
   </types>
+  <types
+      xmi:id="_fhZ-MFH5EeipTuZCnZov6A"
+      name="GDPRUser"
+      sourceRelationships="_UOU95FHtEeipTuZCnZov6A _pz13VFH5EeipTuZCnZov6A"
+      shared="true">
+    <fields
+        xmi:id="_fhZ-MVH5EeipTuZCnZov6A"
+        name="id"
+        parameterType="Integer"
+        notNull="true"
+        primaryKey="true"
+        autogenerated="true"
+        xmlOptional="true"/>
+    <indexes
+        xmi:id="_KC0KIFIDEeipTuZCnZov6A"
+        name="GDPRUSER_1">
+      <columns
+          xmi:id="_KC0KIVIDEeipTuZCnZov6A"
+          name="PERSON_ID"/>
+    </indexes>
+  </types>
+  <importedTypes
+      xmi:id="_Sp9BEFHtEeipTuZCnZov6A"
+      name="human::Person"
+      targetRelationships="_pz13VFH5EeipTuZCnZov6A"/>
   <relationships
       xsi:type="com.whitestein.lsps.modeler.datatypes:RecAssociation"
       xmi:id="_Pk9xpE9yEeipTuZCnZov6A"
@@ -589,7 +762,7 @@
     </sourceEndProperties>
     <targetEndProperties
         xmi:id="_Pk9xp09yEeipTuZCnZov6A"
-        name="consent_purpose"
+        name="consentPurpose"
         lazy="true">
       <foreignKeys
           xmi:id="_Pk9xqE9yEeipTuZCnZov6A"
@@ -651,6 +824,7 @@
     <targetEndProperties
         xmi:id="_iT78x09zEeipTuZCnZov6A"
         name="user"
+        composition="true"
         lazy="true">
       <foreignKeys
           xmi:id="_iT78yE9zEeipTuZCnZov6A"
@@ -664,7 +838,7 @@
       target="_Hw5lIE-CEeipTuZCnZov6A">
     <sourceEndProperties
         xmi:id="_NwuZlU-CEeipTuZCnZov6A"
-        name="consent_purposes"
+        name="consentPurposes"
         multiplicity="SET"
         lazy="true">
       <foreignKeys
@@ -776,6 +950,7 @@
     </sourceEndProperties>
     <targetEndProperties
         xmi:id="_UeBWB0-YEeipTuZCnZov6A"
+        name="contact"
         lazy="true">
       <foreignKeys
           xmi:id="_UeBWCE-YEeipTuZCnZov6A"
@@ -789,6 +964,7 @@
       target="_Hw5lIE-CEeipTuZCnZov6A">
     <sourceEndProperties
         xmi:id="_X8ExRU-YEeipTuZCnZov6A"
+        name="contact"
         lazy="true">
       <foreignKeys
           xmi:id="_X8ExRk-YEeipTuZCnZov6A"
@@ -796,11 +972,72 @@
     </sourceEndProperties>
     <targetEndProperties
         xmi:id="_X8ExR0-YEeipTuZCnZov6A"
-        name="processor_roles"
+        name="processorRoles"
         multiplicity="SET"
         lazy="true">
       <foreignKeys
           xmi:id="_X8ExSE-YEeipTuZCnZov6A"
+          pkName="ID"/>
+    </targetEndProperties>
+  </relationships>
+  <relationships
+      xsi:type="com.whitestein.lsps.modeler.datatypes:RecAssociation"
+      xmi:id="_UOU95FHtEeipTuZCnZov6A"
+      source="_fhZ-MFH5EeipTuZCnZov6A"
+      target="_bK2sUE-WEeipTuZCnZov6A">
+    <sourceEndProperties
+        xmi:id="_UOU95VHtEeipTuZCnZov6A"
+        name="userProfiles"
+        multiplicity="SET"
+        lazy="true">
+      <foreignKeys
+          xmi:id="_UOU95lHtEeipTuZCnZov6A"
+          pkName="ID"
+          notNull="true"/>
+    </sourceEndProperties>
+    <targetEndProperties
+        xmi:id="_UOU951HtEeipTuZCnZov6A"
+        name="controlled"
+        multiplicity="SET"
+        lazy="true">
+      <foreignKeys
+          xmi:id="_UOU96FHtEeipTuZCnZov6A"
+          pkName="ID"
+          notNull="true"/>
+    </targetEndProperties>
+    <indexes
+        xmi:id="_tVG-oFH5EeipTuZCnZov6A"
+        name="GDPRUSER_DATA_CONTROLLER_1">
+      <columns
+          xmi:id="_tVG-oVH5EeipTuZCnZov6A"
+          name="GDPRUSER_ID"/>
+    </indexes>
+    <indexes
+        xmi:id="_vfo8gFH5EeipTuZCnZov6A"
+        name="GDPRUSER_DATA_CONTROLLER_2">
+      <columns
+          xmi:id="_vfo8gVH5EeipTuZCnZov6A"
+          name="DATA_CONTROLLER_ID"/>
+    </indexes>
+  </relationships>
+  <relationships
+      xsi:type="com.whitestein.lsps.modeler.datatypes:RecAssociation"
+      xmi:id="_pz13VFH5EeipTuZCnZov6A"
+      source="_fhZ-MFH5EeipTuZCnZov6A"
+      target="_Sp9BEFHtEeipTuZCnZov6A">
+    <sourceEndProperties
+        xmi:id="_pz13VVH5EeipTuZCnZov6A"
+        lazy="true">
+      <foreignKeys
+          xmi:id="_pz13WFH5EeipTuZCnZov6A"
+          pkName="ID"/>
+    </sourceEndProperties>
+    <targetEndProperties
+        xmi:id="_pz13VlH5EeipTuZCnZov6A"
+        name="person"
+        lazy="true">
+      <foreignKeys
+          xmi:id="_pz13V1H5EeipTuZCnZov6A"
           pkName="ID"/>
     </targetEndProperties>
   </relationships>
@@ -813,5 +1050,18 @@
     <constants
         xmi:id="_6ISN0E-WEeipTuZCnZov6A"
         name="PERFORMANCE_OF_CONTRACT"/>
+  </enumerationTypes>
+  <enumerationTypes
+      xmi:id="_UsG5gFICEeipTuZCnZov6A"
+      name="PersonalData">
+    <constants
+        xmi:id="_eX8ssFICEeipTuZCnZov6A"
+        name="NAME"/>
+    <constants
+        xmi:id="_e-iyoFICEeipTuZCnZov6A"
+        name="EMAIL"/>
+    <constants
+        xmi:id="_fWk4IFICEeipTuZCnZov6A"
+        name="ADDRESS"/>
   </enumerationTypes>
 </com.whitestein.lsps.modeler.datatypes:GoUserDefinedTypes>

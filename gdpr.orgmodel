@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.org:OrgModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.whitestein.lsps.modeler.diagram="http:///com/whitestein/lsps/modeler/diagram.ecore"
+    xmlns:com.whitestein.lsps.modeler.org="http:///com/whitestein/lsps/modeler/org.ecore"
+    xmi:id="_cGQUsFHzEeipTuZCnZov6A"
+    formatVersion="2">
+  <diagrams
+      xmi:id="_cGQUsVHzEeipTuZCnZov6A"
+      name="Main">
+    <children
+        xmi:id="_ccsewVHzEeipTuZCnZov6A"
+        element="_ccsewFHzEeipTuZCnZov6A">
+      <layoutConstraint
+          xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
+          xmi:id="_ccsewlHzEeipTuZCnZov6A"
+          x="268"
+          y="50"
+          width="-1"
+          height="-1"/>
+    </children>
+    <children
+        xmi:id="_dAAnMVHzEeipTuZCnZov6A"
+        element="_dAAnMFHzEeipTuZCnZov6A">
+      <layoutConstraint
+          xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
+          xmi:id="_dAAnMlHzEeipTuZCnZov6A"
+          x="268"
+          y="249"
+          width="-1"
+          height="-1"/>
+    </children>
+  </diagrams>
+  <roleUnits
+      xsi:type="com.whitestein.lsps.modeler.org:Role"
+      xmi:id="_ccsewFHzEeipTuZCnZov6A"
+      name="Admin"/>
+  <roleUnits
+      xsi:type="com.whitestein.lsps.modeler.org:Role"
+      xmi:id="_dAAnMFHzEeipTuZCnZov6A"
+      name="Client"/>
+</com.whitestein.lsps.modeler.org:OrgModel>

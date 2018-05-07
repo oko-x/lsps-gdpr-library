@@ -21,11 +21,74 @@
           xmi:id="_osQ-sE-dEeipTuZCnZov6A">
         <valueProvider
             xmi:id="_osQ-sU-dEeipTuZCnZov6A">
-          <expression>Consent.granted_at</expression>
+          <expression>Consent.grantedAt</expression>
         </valueProvider>
         <renderer
             xmi:id="_osQ-sk-dEeipTuZCnZov6A"/>
       </columns>
+    </components>
+    <components
+        xsi:type="com.whitestein.lsps.modeler.form2:FRepeater"
+        xmi:id="_pZ1UgFH8EeipTuZCnZov6A">
+      <dataSource
+          xmi:id="_pZ1UgVH8EeipTuZCnZov6A"
+          type="COLLECTION">
+        <expression>getOrCreateCurrentGDPRUser().controlled</expression>
+      </dataSource>
+      <iterator
+          xmi:id="_pZ1UglH8EeipTuZCnZov6A"
+          name="dataController"
+          type="DataController"/>
+      <component
+          xsi:type="com.whitestein.lsps.modeler.form2:FGrid"
+          xmi:id="_VbUUcFH4EeipTuZCnZov6A"
+          editorEnabled="true">
+        <dataSource
+            xmi:id="_VbUUcVH4EeipTuZCnZov6A"
+            type="COLLECTION">
+          <expression>dataController.applications</expression>
+        </dataSource>
+        <columns
+            xmi:id="_IXM2gFH7EeipTuZCnZov6A"
+            editable="true">
+          <valueProvider
+              xmi:id="_IXM2gVH7EeipTuZCnZov6A">
+            <expression>Application.name</expression>
+          </valueProvider>
+          <renderer
+              xmi:id="_IXM2glH7EeipTuZCnZov6A"/>
+        </columns>
+        <columns
+            xmi:id="_ez5ksFIJEeipTuZCnZov6A">
+          <valueProvider
+              xmi:id="_ez5ksVIJEeipTuZCnZov6A">
+            <expression>Application.controller.contact.name</expression>
+          </valueProvider>
+          <renderer
+              xmi:id="_ez5kslIJEeipTuZCnZov6A"/>
+        </columns>
+        <columns
+            xmi:id="_gExWsFIJEeipTuZCnZov6A"
+            editable="true">
+          <valueProvider
+              xmi:id="_gExWsVIJEeipTuZCnZov6A">
+            <expression>Application.appId</expression>
+          </valueProvider>
+          <renderer
+              xmi:id="_gExWslIJEeipTuZCnZov6A"/>
+        </columns>
+        <columns
+            xmi:id="_iK1EQFIJEeipTuZCnZov6A"
+            editable="true">
+          <valueProvider
+              xmi:id="_iK1EQVIJEeipTuZCnZov6A">
+            <expression>Application.appSecret</expression>
+          </valueProvider>
+          <renderer
+              xmi:id="_iK1EQlIJEeipTuZCnZov6A"/>
+        </columns>
+        <caption><![CDATA["Applications"]]></caption>
+      </component>
     </components>
     <components
         xsi:type="com.whitestein.lsps.modeler.form2:FButton"
@@ -33,10 +96,23 @@
       <caption><![CDATA["add consent"]]></caption>
       <clickListener><![CDATA[{ e ->
 	def Consent consent := proxy(Consent);
-	consent.granted_at := now();
-	mergeProxies(false, consent);
-	CONSENT_TABLE.refresh();
-}]]></clickListener>
+	consent.grantedAt := now();
+	def ApplicationUser user := proxy(ApplicationUser);
+	def Application application := proxy(Application);
+	application.name := "app";
+	def DataController controller := proxy(DataController);
+
+
+	def GDPRUser gdprUser := proxy(getOrCreateCurrentGDPRUser());
+	gdprUser.controlled := getOrCreateCurrentGDPRUser().controlled.add(controller);
+
+	application.controller := controller;
+	user.application := application;
+	consent.user := user;
+
+	mergeProxies(false, consent, user, application, controller, gdprUser);
+}
+]]></clickListener>
     </components>
   </root>
 </com.whitestein.lsps.modeler.form2:Form>

@@ -17,7 +17,7 @@
     <assignments
         xmi:id="_N6oHIVBsEeipTuZCnZov6A">
       <expression><![CDATA[consent := proxy(Consent);
-consent.granted_at := now();
+consent.grantedAt := now();
 def ApplicationUser user := proxy(ApplicationUser);
 def Application application := proxy(Application);
 def DataController controller := proxy(DataController);
@@ -36,7 +36,12 @@ everythingOK:=false;]]></expression>
   <elements
       xsi:type="com.whitestein.lsps.modeler.gbpmn:NoneStartEvent"
       xmi:id="_N6oHI1BsEeipTuZCnZov6A"
-      sourceRelationships="_N6oHOVBsEeipTuZCnZov6A"/>
+      sourceRelationships="_N6oHOVBsEeipTuZCnZov6A">
+    <assignments
+        xmi:id="_Ugs6kFHdEeipTuZCnZov6A"/>
+    <measurements
+        xmi:id="_Ug3SoFHdEeipTuZCnZov6A"/>
+  </elements>
   <elements
       xsi:type="com.whitestein.lsps.modeler.gbpmn:Task"
       xmi:id="_N6oHJFBsEeipTuZCnZov6A"
@@ -158,7 +163,7 @@ requestParams /* Reference<Map<String, String>> */ -> null
       <layoutConstraint
           xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
           xmi:id="_N6oHRlBsEeipTuZCnZov6A"
-          x="268"
+          x="219"
           y="23"
           width="-1"
           height="-1"/>
