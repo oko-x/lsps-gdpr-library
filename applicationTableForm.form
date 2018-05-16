@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.form2:Form
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.whitestein.lsps.modeler.form2="http:///com/whitestein/lsps/modeler/form2.ecore"
+    xmi:id="_cPkhcFOjEeiY7_kv27Li4Q"
+    name="applicationTableForm">
+  <root
+      xsi:type="com.whitestein.lsps.modeler.form2:FCustomComponent"
+      xmi:id="_dOyiwFOjEeiY7_kv27Li4Q"
+      customComponent="scaffolding_forms::EntityOverview">
+    <customProperties
+        xmi:id="_dOyiwVOjEeiY7_kv27Li4Q"
+        name="entityType">
+      <expression>Application</expression>
+    </customProperties>
+    <init><![CDATA[c.setRecordOptions(
+	[
+		Application -> new scaffolding_forms::RecordOptions(
+			linkDisplayName -> {o:Object-> if not o == null then cast(o, Application).name end;}
+		),
+		ApplicationUser -> new scaffolding_forms::RecordOptions(
+			linkDisplayName -> {o:Object-> if not o == null then cast(o, ApplicationUser).applicationIdentification end;}
+		),
+		DataController -> new scaffolding_forms::RecordOptions(
+			linkDisplayName -> {o:Object-> if not o == null then cast(o, DataController).contact.name end;}
+		),
+		DataProcessor -> new scaffolding_forms::RecordOptions(
+			linkDisplayName -> {o:Object-> if not o == null then cast(o, DataProcessor).contact.name end;}
+		)
+	]
+)
+]]></init>
+  </root>
+</com.whitestein.lsps.modeler.form2:Form>

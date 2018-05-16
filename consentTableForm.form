@@ -12,13 +12,15 @@
     <components
         xsi:type="com.whitestein.lsps.modeler.form2:FGrid"
         xmi:id="_5CHoQE-cEeipTuZCnZov6A"
-        componentID="CONSENT_TABLE">
+        componentID="CONSENT_TABLE"
+        editorEnabled="true">
       <dataSource
           xmi:id="_5CHoQU-cEeipTuZCnZov6A">
         <expression>Consent</expression>
       </dataSource>
       <columns
-          xmi:id="_osQ-sE-dEeipTuZCnZov6A">
+          xmi:id="_osQ-sE-dEeipTuZCnZov6A"
+          editable="true">
         <valueProvider
             xmi:id="_osQ-sU-dEeipTuZCnZov6A">
           <expression>Consent.grantedAt</expression>
@@ -95,7 +97,8 @@
         xmi:id="_um6_QE-dEeipTuZCnZov6A">
       <caption><![CDATA["add consent"]]></caption>
       <clickListener><![CDATA[{ e ->
-	def Consent consent := proxy(Consent);
+	Forms.navigateTo(new DocumentNavigation(documentType -> applicationTable(), parameters -> null))
+	/*def Consent consent := proxy(Consent);
 	consent.grantedAt := now();
 	def ApplicationUser user := proxy(ApplicationUser);
 	def Application application := proxy(Application);
@@ -110,7 +113,7 @@
 	user.application := application;
 	consent.user := user;
 
-	mergeProxies(false, consent, user, application, controller, gdprUser);
+	mergeProxies(false, consent, user, application, controller, gdprUser);*/
 }
 ]]></clickListener>
     </components>

@@ -16,5 +16,13 @@
   <moduleImports
       xmi:id="_6_taUk9wEeipTuZCnZov6A"
       moduleName="forms"/>
+  <moduleImports
+      xmi:id="_LMePoFNdEeiY7_kv27Li4Q"
+      moduleName="scaffolding_ui"
+      description=""/>
+  <moduleImports
+      xmi:id="_LdWkQFNdEeiY7_kv27Li4Q"
+      moduleName="scaffolding_forms"
+      description=""/>
   <terminateCondition></terminateCondition>
 </com.whitestein.lsps.modeler.module:ModuleDescription>

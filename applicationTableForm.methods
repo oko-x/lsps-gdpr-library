@@ -1,0 +1,11 @@
+applicationTableForm {
+
+	private void preCreateWidget() {
+		// TODO Auto-generated method stub
+	}
+
+	private void postCreateWidget() {
+		// TODO Auto-generated method stub
+	}
+
+}

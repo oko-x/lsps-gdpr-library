@@ -12,4 +12,11 @@
     <uIDefinition>new consentTableForm()</uIDefinition>
     <accessRights>true</accessRights>
   </docs>
+  <docs
+      xmi:id="_XS4lAFOjEeiY7_kv27Li4Q"
+      name="applicationTable">
+    <title><![CDATA["Applications"]]></title>
+    <uIDefinition>new applicationTableForm()</uIDefinition>
+    <accessRights>true</accessRights>
+  </docs>
 </com.whitestein.lsps.modeler.document:Documents>
